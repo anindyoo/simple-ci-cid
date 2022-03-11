@@ -2,7 +2,7 @@ name: deploy to github page
 on: 
   push:
     branches:
-      - master # meaning pushing to master will trigger the action
+      - main # meaning pushing to master will trigger the action
 jobs:          # can include multiple jobs
   deploy:      # here we will only have deploy
     runs-on: ubuntu-latest
