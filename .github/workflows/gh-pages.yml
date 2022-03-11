@@ -2,17 +2,17 @@ name: deploy to github page
 on: 
   push:
     branches:
-      - main # meaning pushing to master will trigger the action
-jobs:          # can include multiple jobs
-  deploy:      # here we will only have deploy
+      - main 
+jobs:          
+  deploy:      
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # an action checkout your repo
+      - uses: actions/checkout@v2 
       - run: |
             npm install
             npm run build #first run these two scripts
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3 # this is the magic
+        uses: peaceiris/actions-gh-pages@v3 
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub Actions runner automatically creates a GITHUB_TOKEN secret to use in your workflow
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
