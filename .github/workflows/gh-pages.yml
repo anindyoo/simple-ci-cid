@@ -1,6 +1,6 @@
 name: deploy to github page
 on: 
-  push:
+  pull_request:
     branches:
       - main 
 jobs:          
